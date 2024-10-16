@@ -8,7 +8,7 @@ export function renderCheckoutHeader() {
 
   checkoutLabel.innerHTML = `Checkout (<a
         class="return-to-home-link js-return-to-home-link"
-        href="amazon.html"
+        href="index.html"
         >${totalItems} items</a
       >)`;
 }
