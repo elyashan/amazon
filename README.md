@@ -5,7 +5,7 @@
 This project is a fully functional e-commerce web application inspired by [Amazon.com](https://amazon.com), designed and developed using **Vanilla JavaScript**, **HTML**, and **CSS**. The goal of this project was to build a modern and responsive e-commerce platform while deepening my knowledge of frontend technologies and improving user experience design.
 
 ### Live Demo
-[Check out the live demo here](#) (Add your live site link here if deployed)
+[Check out the live demo here](https://elyashan.github.io/amazon/) 
 
 ## Features
 
@@ -37,5 +37,5 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/amazon-clone.git
+   git clone https://github.com/elyashan/amazon-clone.git
    cd amazon-clone
