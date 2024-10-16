@@ -5,9 +5,28 @@ import formatCurrency from "./utils/formatCurrency.js";
 function renderProductsGrid() {
   let productsHTML = "";
   let totalled = addingTotals();
+  let filteredProducts = products;
   document.querySelector(".js-cart-quantity").innerHTML = totalled;
-
   products.forEach((product) => {
+    const url = new URL(window.location.href);
+    const search = url.searchParams.get("search");
+
+    if (search) {
+      filteredProducts = products.filter((product) => {
+        return (
+          product.name.toLowerCase().includes(search.toLowerCase()) ||
+          product.keywords.forEach((keyword) => {
+            if (keyword.toLowerCase().includes(search.toLowerCase())) {
+              return keyword;
+            }
+          })
+        );
+      });
+    }
+  });
+  console.log(filteredProducts);
+
+  filteredProducts.forEach((product) => {
     productsHTML += `
   <div class="product-container">
           <div class="product-image-container">
@@ -79,6 +98,10 @@ function renderProductsGrid() {
     });
   });
 }
+document.querySelector(".js-search-button").addEventListener("click", () => {
+  const search = document.querySelector(".js-search-bar").value;
+  window.location.href = `index.html?search=${search}`;
+});
 
 async function loadPage() {
   try {
